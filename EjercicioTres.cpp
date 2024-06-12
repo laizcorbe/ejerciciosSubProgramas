@@ -7,31 +7,24 @@
 
 using namespace std;
 
-int calcularFactorial(int n){
-    int factorial = n;
-    if(n == 0 || n == 1){
-        return 1;
+unsigned long factorial(unsigned int n)
+{
+    long productoria = 1;
+    for (int i = 1; i <= n; i++)
+    {
+        productoria *= i;
     }
-
-    for(int i = 0; i<n ; i++){
-        factorial *= (n-1);
-        n--;
-    }
-
-    return factorial;
+    return productoria;
 
 }
 
 int main()
 {
-
-    int numero, factorial;
+    int numero;
 
     cout << "Ingrese el numero al que desea realizarle el factorial: " << endl;
     cin >> numero;
 
-    factorial = calcularFactorial(numero);
-
-    cout << "El factorial !" << numero << " es: " << factorial << endl;
+    cout << "El factorial !" << numero << " es: " << factorial(numero) << endl;
     return 0;
 }
